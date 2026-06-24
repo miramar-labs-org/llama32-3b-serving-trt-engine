@@ -1,0 +1,17 @@
+runtime:
+  kind: trtllm-serve
+
+model:
+  served_model_name: "meta-llama/Llama-3.2-3B-Instruct"
+  hf_path: ""   # path to HF model dir relative to ~/shared/huggingface-kfp/ (e.g. models/llama32-3b)
+
+compression:
+  project: ""   # name of the compression pipeline repo (e.g. qwen25-7b-trt-compression)
+  run_id: "latest"   # run directory name, or "latest" to auto-detect most recent
+
+trtllm:
+  port: 8000
+
+deployment:
+  namespace: "llama32-3b-serving-trt-engine"
+  gpu_count: 1
